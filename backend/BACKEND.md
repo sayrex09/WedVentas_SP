@@ -40,22 +40,44 @@ Este repositorio contiene el **backend del sistema Sayrex Projects**, una plataf
 ## 📁 Estructura del Proyecto
    
 ```
-  backend/
-  ├── src/main/java/com/sayrex/backend/
-  │   ├── BackendApplication.java       ← Clase principal
-  │   ├── config/                       ← Configuraciones globales (JWT, CORS, Swagger)
-  │   ├── controller/                   ← Controladores REST
-  │   ├── dto/                          ← Objetos de transferencia de datos
-  │   ├── exception/                    ← Manejo de errores personalizados
-  │   ├── model/                        ← Entidades JPA (Usuario, Proyecto, Venta, etc.)
-  │   ├── repository/                   ← Interfaces JPA para acceso a datos
-  │   ├── security/                     ← Seguridad y autenticación JWT
-  │   └── service/                      ← Lógica de negocio (servicios)
-  ├── src/main/resources/
-  │   ├── application.properties        ← Configuraciones de entorno
-  │   └── static/                       ← Archivos estáticos (si aplica)
-  ├── pom.xml                           ← Dependencias Maven
-  └── README.md                         ← Documentación del proyecto
+   backend/
+   │
+   ├── src/main/java/com/sayrex/
+   │   ├── BackendApplication.java
+   │   ├── config/               # Configuraciones globales
+   │   │   ├── security/         # Config seguridad JWT
+   │   │   ├── swagger/          # Config OpenAPI
+   │   │   ├── database/         # Config JPA/Hibernate
+   │   │   └── web/              # Config CORS, MVC
+   │   │
+   │   ├── modules/              # Módulos funcionales
+   │   │   ├── auth/             # Autenticación
+   │   │   ├── user/             # Gestión usuarios
+   │   │   ├── project/          # Gestión proyectos
+   │   │   ├── marketplace/      # Lógica de compra/venta
+   │   │   ├── payment/          # Pagos y transacciones
+   │   │   ├── notification/     # Sistema de notificaciones
+   │   │   └── admin/            # Funcionalidades de administración
+   │   │       └── crm/          # CRM específico
+   │   │
+   │   ├── shared/               # Componentes compartidos
+   │   │   ├── dto/              # DTOs comunes
+   │   │   ├── exception/        # Excepciones globales
+   │   │   ├── util/             # Utilidades
+   │   │   └── interceptor/      # Interceptores
+   │   │
+   │   └── infrastructure/      # Infraestructura
+   │       ├── persistence/      # Repositorios
+   │       ├── messaging/        # Integración mensajería
+   │       └── storage/          # Almacenamiento archivos
+   │
+   ├── src/main/resources/
+   │   ├── application.yml       # Config principal
+   │   ├── application-dev.yml   # Config desarrollo
+   │   ├── application-prod.yml  # Config producción
+   │   └── messages/            # Internacionalización
+   │
+   └── pom.xml
 ```
    
 ---

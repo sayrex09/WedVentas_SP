@@ -156,6 +156,7 @@ sayrex/
 │   │   ├── repository/     # Interfaces JPA
 │   │   ├── security/       # Seguridad y JWT
 │   │   └── service/        # Lógica de negocio
+│   │       └──ipml
 │   ├── src/main/resources/
 │   │   ├── application.properties
 │   │   └── static/
